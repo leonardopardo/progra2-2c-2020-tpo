@@ -4,8 +4,7 @@ import miApi.ICola;
 import misImplementaciones.Cola;
 import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static junit.framework.TestCase.*;
 
 public class ColaTest {
 

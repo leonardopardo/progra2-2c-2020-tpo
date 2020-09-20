@@ -3,15 +3,15 @@ package tests;
 import miApi.IColaCadena;
 import misImplementaciones.ColaCadena;
 import org.junit.jupiter.api.Test;
-import static junit.framework.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static junit.framework.TestCase.*;
 
 public class ColaCadenaTest{
     @Test
     public void consultar_si_esta_vacia(){
         IColaCadena cola = new ColaCadena();
         cola.inicializarCola();
-        assertTrue(cola.colaVacia() == true);
+        assertTrue(cola.colaVacia());
     }
 
     @Test
@@ -19,7 +19,7 @@ public class ColaCadenaTest{
         IColaCadena cola = new ColaCadena();
         cola.inicializarCola();
         cola.acolar("Hola Mundo");
-        assertTrue(cola.colaVacia() == false);
+        assertFalse(cola.colaVacia());
     }
 
     @Test
@@ -36,7 +36,7 @@ public class ColaCadenaTest{
         cola.inicializarCola();
         cola.acolar("Hola Mundo");
         cola.desacolar();
-        assertTrue(cola.colaVacia() == true);
+        assertTrue(cola.colaVacia());
     }
 
     @Test
