@@ -4,6 +4,13 @@ import miApi.IConjunto;
 import miApi.IDiccionarioMultiple;
 
 public class DiccionarioMultiple implements IDiccionarioMultiple {
+
+    class Nodo {
+        int clave;
+        Conjunto valor;
+        Nodo siguiente;
+    }
+
     @Override
     public void inicializarDiccionarioMultiple() {
 

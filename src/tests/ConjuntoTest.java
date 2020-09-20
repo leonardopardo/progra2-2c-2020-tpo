@@ -1,6 +1,7 @@
 package tests;
 
 import miApi.IConjunto;
+import misAlgoritmos.ConjuntoAlgoritmos;
 import misImplementaciones.Conjunto;
 import org.junit.jupiter.api.Test;
 
@@ -118,5 +119,41 @@ public class ConjuntoTest {
         }
 
         assertEquals(3, flag);
+    }
+
+    @Test
+    void contar_elmentos_de_un_conjunto(){
+        IConjunto conjunto = new Conjunto();
+        conjunto.inicializarConjunto();
+        conjunto.agregar(18);
+        conjunto.agregar(27);
+        conjunto.agregar(-2);
+        conjunto.agregar(10);
+        conjunto.agregar(12);
+
+        ConjuntoAlgoritmos cAlg = new ConjuntoAlgoritmos();
+
+        assertEquals(5, cAlg.contarElementos(conjunto));
+    }
+
+    @Test
+    void comparar_dos_conjuntos(){
+        IConjunto cA = new Conjunto();
+        cA.inicializarConjunto();
+        cA.agregar(1);
+        cA.agregar(2);
+        cA.agregar(3);
+        cA.agregar(4);
+
+        IConjunto cB = new Conjunto();
+        cB.inicializarConjunto();
+        cB.agregar(1);
+        cB.agregar(2);
+        cB.agregar(3);
+        cB.agregar(4);
+
+        ConjuntoAlgoritmos cAlg = new ConjuntoAlgoritmos();
+
+        assertTrue(cAlg.comparar(cA, cB));
     }
 }
