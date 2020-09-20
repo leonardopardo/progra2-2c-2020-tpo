@@ -18,33 +18,29 @@ public class Conjunto implements IConjunto {
 
     @Override
     public void agregar(int x) {
+        Nodo nuevoNodo = new Nodo();
+        nuevoNodo.dato = x;
+        nuevoNodo.siguiente = primero;
 
-        if(this.primero.dato == x) {
-            this.primero = this.primero.siguiente;
-            return;
-        }
-
-        Nodo anterior = null, actual = this.primero;
-
-        while(actual.dato != x) {
-            anterior = actual;
-            actual = actual.siguiente;
-        }
-
-        anterior.siguiente = actual.siguiente;
+        this.primero = nuevoNodo;
     }
 
     @Override
     public void sacar(int x) {
+        Nodo nodoAnterior = null;
+        Nodo nodoActual = this.primero;
 
-        Nodo anterior = null, actual = this.primero;
-
-        while(actual != null && actual.dato != x){
-            anterior = actual;
-            actual = actual.siguiente;
+        if(nodoActual.dato == x){
+            this.primero = nodoActual.siguiente;
+            return;
         }
 
-        anterior.siguiente = actual.siguiente;
+        while(nodoActual.dato != x){
+            nodoAnterior = nodoActual;
+            nodoActual = nodoActual.siguiente;
+        }
+
+        nodoAnterior.siguiente = nodoActual.siguiente;
     }
 
     @Override
