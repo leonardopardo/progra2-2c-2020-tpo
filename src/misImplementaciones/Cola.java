@@ -19,16 +19,16 @@ public class Cola implements ICola {
 
     @Override
     public void acolar(int x) {
-        Nodo n = new Nodo();
-        n.dato = x;
-        n.siguiente = null;
+        Nodo nuevoNodo = new Nodo();
+        nuevoNodo.dato = x;
+        nuevoNodo.siguiente = null;
 
         if (this.colaVacia()) {
-            this.primero = n;
-            this.ultimo = n;
+            this.primero = nuevoNodo;
+            this.ultimo = nuevoNodo;
         } else {
-            this.ultimo.siguiente = n;
-            this.ultimo = n;
+            this.ultimo.siguiente = nuevoNodo;
+            this.ultimo = nuevoNodo;
         }
     }
 
