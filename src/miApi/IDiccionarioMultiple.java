@@ -29,7 +29,7 @@ public interface IDiccionarioMultiple {
      * @Tarea elimina un valor asociado a una clave, ambos datos suministrados.
      * @Precondición Ambos deben existir.
      */
-    public void eliminarValor(int clave);
+    public void eliminarValor(int clave, int valor);
 
     /**
      * @Tarea devuelve el conjunto de valores asociados a una clave suministrada.
