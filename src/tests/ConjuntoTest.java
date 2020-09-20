@@ -3,7 +3,9 @@ package tests;
 import miApi.IConjunto;
 import misImplementaciones.Conjunto;
 import org.junit.jupiter.api.Test;
-import static junit.framework.TestCase.*;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class ConjuntoTest {
     @Test
@@ -22,4 +24,5 @@ public class ConjuntoTest {
 
         assertTrue(conjunto.pertenece(1));
     }
+
 }
