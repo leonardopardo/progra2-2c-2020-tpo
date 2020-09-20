@@ -68,7 +68,7 @@ public class DiccionarioSimple implements IDiccionarioSimple {
             return conjuntoClaves;
         }
 
-        while(actual.siguiente != null) {
+        while(actual != null) {
             conjuntoClaves.agregar(actual.clave);
             actual = actual.siguiente;
         }
