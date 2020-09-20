@@ -20,9 +20,10 @@ _**¿Qué no se puede hacer?**_
 - Push a master.
 - Push a ramas de otros.*
 
-_**Cualquier consulta me puenden enviar un mensaje por:**_
+_**Cualquier consulta me pueden enviar un mensaje por:**_
 
 **Teams** Leonardo Pardo
+
 **Mail:** lepardo@uade.edu.ar
 
 <hr>
