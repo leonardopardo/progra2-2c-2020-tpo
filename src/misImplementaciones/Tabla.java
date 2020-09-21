@@ -25,8 +25,22 @@ public class Tabla implements ITabla {
         Tupla nuevaTupla = new Tupla();
         nuevaTupla.codigo = this.tuplas;
         nuevaTupla.nombre = nombre;
-        nuevaTupla.siguiente = this.primera;
-        this.primera = nuevaTupla;
+        nuevaTupla.siguiente = null;
+
+        Tupla tuplaActual = this.primera;
+
+        if (tuplaActual == null){
+            this.primera = nuevaTupla;
+            this.tuplas++;
+            return;
+        }
+
+        while(tuplaActual.siguiente != null){
+            tuplaActual = tuplaActual.siguiente;
+        }
+
+        tuplaActual.siguiente = nuevaTupla;
+
         this.tuplas++;
     }
 
@@ -52,7 +66,6 @@ public class Tabla implements ITabla {
         return tuplaActual.codigo;
     }
 
-    // TODO: INVERTIR COLA DE SALIDA.
     @Override
     public IColaCadena tabla() {
         Tupla tuplaActual = this.primera;
