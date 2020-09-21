@@ -12,22 +12,22 @@ public class Tabla implements ITabla {
     }
 
     private Tupla primera;
-    private int cantidad;
+    private int tuplas;
 
     @Override
     public void inicializarTabla() {
         this.primera = null;
-        this.cantidad = 0;
+        this.tuplas = 0;
     }
 
     @Override
     public void agregar(String nombre) {
         Tupla nuevaTupla = new Tupla();
-        nuevaTupla.codigo = this.cantidad;
+        nuevaTupla.codigo = this.tuplas;
         nuevaTupla.nombre = nombre;
         nuevaTupla.siguiente = this.primera;
         this.primera = nuevaTupla;
-        this.cantidad++;
+        this.tuplas++;
     }
 
     @Override
@@ -52,6 +52,7 @@ public class Tabla implements ITabla {
         return tuplaActual.codigo;
     }
 
+    // TODO: INVERTIR COLA DE SALIDA.
     @Override
     public IColaCadena tabla() {
         Tupla tuplaActual = this.primera;
@@ -72,10 +73,12 @@ public class Tabla implements ITabla {
         return cola;
     }
 
+    // TODO: PROGRAMAR ...
     @Override
     public void ordenarNombres() {
     }
 
+    // TODO: PROGRAMAR ...
     @Override
     public void ordenarCodigos(){
 

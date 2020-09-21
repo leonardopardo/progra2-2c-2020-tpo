@@ -52,7 +52,7 @@ public class TablaTest {
     }
 
     @Test
-    void agregar_elemntos_y_validar_cola_cadena_del_primero(){
+    void agregar_elementos_y_validar_cola_cadena_del_primero(){
         ITabla t = new Tabla();
         t.inicializarTabla();
         t.agregar("Federico");
@@ -62,5 +62,4 @@ public class TablaTest {
 
         assertEquals("0;Federico", t.tabla().primero());
     }
-
 }
