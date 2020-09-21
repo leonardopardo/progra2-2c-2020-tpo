@@ -4,6 +4,31 @@ import miApi.IConjunto;
 import misImplementaciones.Conjunto;
 
 public class ConjuntoAlgoritmos {
+
+    /**
+     * Copia un conjunto en otro, no se modifica el conjunto original.
+     * @param conjuntoOrigen
+     * @param conjuntoDestino
+     */
+    public void copiar(IConjunto conjuntoOrigen, IConjunto conjuntoDestino){
+
+        IConjunto conjuntoAux = new Conjunto();
+        conjuntoAux.inicializarConjunto();
+
+        while(!conjuntoOrigen.conjuntoVacio()){
+            int elem = conjuntoOrigen.obtener();
+            conjuntoAux.agregar(elem);
+            conjuntoOrigen.sacar(elem);
+        }
+
+        while(!conjuntoAux.conjuntoVacio()) {
+            int elem = conjuntoAux.obtener();
+            conjuntoOrigen.agregar(elem);
+            conjuntoDestino.agregar(elem);
+            conjuntoAux.sacar(elem);
+        }
+    }
+
     /**
      * Compara los valores de dos conjuntos 1 a 1, retorna verdaderos si los conjuntos son iguales. No modifica los
      * conjuntos originales.
@@ -38,6 +63,7 @@ public class ConjuntoAlgoritmos {
 
         return flag == 0;
     }
+
 
     /**
      * Cuenta los elementos de un conjunto dado, no modifica el conjunto original.
