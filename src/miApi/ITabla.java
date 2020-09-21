@@ -17,7 +17,7 @@ public interface ITabla {
      * @Precondición El nombre no debe existir previamente en la tabla. La tabla debe estar inicializada. Al no existir
      * las operaciones eliminarElemento ni actualizarElemento, los códigos serán únicos y consecutivos.
      */
-    public void agregar(int codigo);
+    public void agregar(String nombre);
 
     /**
      * @Tarea Esta operación permite saber si un nombre ya fue ingresado a la tabla.
