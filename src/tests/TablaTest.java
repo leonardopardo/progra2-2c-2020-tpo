@@ -62,4 +62,18 @@ public class TablaTest {
 
         assertEquals("0;Federico", t.tabla().primero());
     }
+
+    @Test
+    void agregar_elementos_y_ordenar_por_nombre(){
+        ITabla t = new Tabla();
+        t.inicializarTabla();
+        t.agregar("Natalia");
+        t.agregar("Nicolás");
+        t.agregar("Federico");
+        t.agregar("Leonardo");
+
+        t.ordenarNombres();
+
+        assertEquals("2;Federico", t.tabla().primero());
+    }
 }
