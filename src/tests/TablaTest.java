@@ -76,4 +76,29 @@ public class TablaTest {
 
         assertEquals("2;Federico", t.tabla().primero());
     }
+
+    @Test
+    void ordenar_tabla_vacia_por_nombre(){
+        ITabla t = new Tabla();
+        t.inicializarTabla();
+
+        t.ordenarNombres();
+
+        assertTrue(t.tabla().colaVacia());
+    }
+
+    @Test
+    void agregar_elementos_ordenar_ordenar_por_nombre_y_volver_a_ordenar_por_codigo(){
+        ITabla t = new Tabla();
+        t.inicializarTabla();
+        t.agregar("Natalia");
+        t.agregar("Nicolás");
+        t.agregar("Federico");
+        t.agregar("Leonardo");
+
+        t.ordenarNombres();
+        t.ordenarCodigos();
+
+        assertEquals("0;Natalia", t.tabla().primero());
+    }
 }

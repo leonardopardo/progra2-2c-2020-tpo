@@ -87,7 +87,6 @@ public class Tabla implements ITabla {
         return cola;
     }
 
-    // TODO: PROGRAMAR ...
     @Override
     public void ordenarNombres() {
 
@@ -156,27 +155,24 @@ public class Tabla implements ITabla {
 
         }
 
-        // TODO: EL ALGORITMO ESTÁ BIEN FALTA MODIFICAR LA TABLA, EL CODIGO A CONTINUACIÓN NO MODIFICA LA TABLA ACTUAL.
+        Tupla primera = !colaNombres.colaVacia()
+                ? nombreElemento(colaNombres.primero())
+                : null;
+
         while( !colaNombres.colaVacia() ) {
-
             Tupla actual = nombreElemento(colaNombres.primero());
-
             colaNombres.desacolar();
 
             if( !colaNombres.colaVacia() ) {
-
                 actual.siguiente = nombreElemento(colaNombres.primero());
-
             } else {
-
                 actual.siguiente = null;
-
             }
         }
 
+        this.primera = primera;
     }
 
-    // TODO: PROGRAMAR ...
     @Override
     public void ordenarCodigos(){
 
@@ -187,6 +183,7 @@ public class Tabla implements ITabla {
 
         while( tuplaActual != null) {
             colaCodigos.acolar( tuplaActual.codigo );
+            tuplaActual = tuplaActual.siguiente;
         }
 
         ICola colaAux =new Cola();
@@ -233,6 +230,7 @@ public class Tabla implements ITabla {
             }
 
         }
+
         while(!colaOrdenada.colaVacia()) {
 
             colaCodigos.acolar(colaOrdenada.primero());
@@ -240,6 +238,11 @@ public class Tabla implements ITabla {
             colaOrdenada.desacolar();
 
         }
+
+
+        Tupla primera = !colaCodigos.colaVacia()
+                ? codigoElemento(colaCodigos.primero())
+                : null;
 
         while(!colaCodigos.colaVacia()) {
 
@@ -253,6 +256,8 @@ public class Tabla implements ITabla {
                 actual.siguiente = null;
             }
         }
+
+        this.primera = primera;
     }
 
     @Override
