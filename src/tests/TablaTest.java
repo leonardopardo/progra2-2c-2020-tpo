@@ -88,7 +88,7 @@ public class TablaTest {
     }
 
     @Test
-    void agregar_elementos_ordenar_ordenar_por_nombre_y_volver_a_ordenar_por_codigo(){
+    void agregar_elementos_ordenar_por_nombre_y_volver_a_ordenar_por_codigo(){
         ITabla t = new Tabla();
         t.inicializarTabla();
         t.agregar("Natalia");

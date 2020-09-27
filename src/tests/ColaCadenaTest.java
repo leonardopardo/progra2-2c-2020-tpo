@@ -27,7 +27,7 @@ public class ColaCadenaTest{
         IColaCadena cola = new ColaCadena();
         cola.inicializarCola();
         cola.acolar("Primero");
-        assertEquals(cola.primero(), "Primero");
+        assertEquals("Primero", cola.primero());
     }
 
     @Test
@@ -37,6 +37,17 @@ public class ColaCadenaTest{
         cola.acolar("Hola Mundo");
         cola.desacolar();
         assertTrue(cola.colaVacia());
+    }
+
+    @Test
+    public void desacolar_primer_elemento_y_consultar_por_el_segundo(){
+        IColaCadena cola = new ColaCadena();
+        cola.inicializarCola();
+        cola.acolar("Hola Mundo");
+        cola.acolar("Franco");
+        cola.desacolar();
+
+        assertEquals( "Franco", cola.primero());
     }
 
     @Test
