@@ -49,7 +49,8 @@ public class Tabla implements ITabla {
     public boolean pertenece(String nombre) {
         Tupla tuplaActual = this.primera;
 
-        while(tuplaActual != null && tuplaActual.nombre != nombre){
+        while(tuplaActual != null && !tuplaActual.nombre.equals(nombre)){
+            boolean x = tuplaActual.nombre.equals(nombre);
             tuplaActual = tuplaActual.siguiente;
         }
 
@@ -60,7 +61,7 @@ public class Tabla implements ITabla {
     public int codigo(String nombre) {
         Tupla tuplaActual = this.primera;
 
-        while (tuplaActual != null && tuplaActual.nombre != nombre) {
+        while (tuplaActual != null && !tuplaActual.nombre.equals(nombre)) {
             tuplaActual = tuplaActual.siguiente;
         }
 
@@ -115,8 +116,6 @@ public class Tabla implements ITabla {
             colaNombres.desacolar();
 
             while( !colaNombres.colaVacia() ) {
-
-                int x = menor.compareToIgnoreCase( colaNombres.primero() );
 
                 if( menor.compareToIgnoreCase( colaNombres.primero() ) < 0 ) {
 

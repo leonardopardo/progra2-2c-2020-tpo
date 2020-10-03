@@ -24,7 +24,7 @@ public class TablaTest {
         t.agregar("Natalia");
         t.agregar("Leonardo");
 
-        assertTrue(t.pertenece("Nicolás"));
+        assertTrue(t.pertenece("Leonardo"));
     }
 
     @Test

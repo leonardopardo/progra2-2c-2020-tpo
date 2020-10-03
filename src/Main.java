@@ -1,3 +1,4 @@
+import miApi.IAbb;
 import miApi.IColaCadena;
 import miApi.ITabla;
 import misAlgoritmos.Helpers;
@@ -54,6 +55,7 @@ public class Main {
         t.agregar("Leonardo");
 
         t.ordenarNombres();
+        t.ordenarCodigos();
 
         IColaCadena colaTabla = t.tabla();
 
@@ -90,7 +92,7 @@ public class Main {
         }
     }
 
-    public static int sumarVectorRecursivo( int[] v, int tam){
+    public static int sumarVectorRecursivo(int[] v, int tam){
         return tam == 1
             ? v[tam-1]
             : sumarVectorRecursivo(v, tam-1) + v[tam-1];
@@ -106,4 +108,29 @@ public class Main {
                 ? primero.valor
                 : min;
     }
+
+    public static void orden(IAbb arbol){
+        if(!arbol.arbolVacio()){
+            orden(arbol.hijoIzq());
+            System.out.println(arbol.raiz());
+            orden(arbol.hijoDer());
+        }
+    }
+
+    public static void preorden(IAbb arbol){
+        if(!arbol.arbolVacio()){
+            System.out.println(arbol.raiz());
+            orden(arbol.hijoIzq());
+            orden(arbol.hijoDer());
+        }
+    }
+
+    public static void posorden(IAbb arbol){
+        if(!arbol.arbolVacio()){
+            orden(arbol.hijoIzq());
+            orden(arbol.hijoDer());
+            System.out.println(arbol.raiz());
+        }
+    }
+
 }

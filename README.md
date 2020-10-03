@@ -101,11 +101,11 @@ Se sabe además que
 - Una persona puede solicitar la misma película en diferente momento a empresas de Streaming distintas.
 
 Se pide un algoritmo que a partir de los datos de las tablas que están cargadas en un TDA tablas y los movimientos están cargados en un TDA cola, guarde en TDAs adecuados la siguiente información:
-- Lista de los 10 últimos movimientos ordenadas de los más recientes a los menos recientes
-- Listado de personas que solicitaron la mayor cantidad de películas, ordenadas por identificador de personas
-- Lista de películas que fueron más solicitadas, junto a que empresas fueron solicitadas cada una.
-- Ranking de las 10 películas más solicitadas, independientemente a la compañía solicitada ordenadas por cantidad de veces que fueron solicitadas.
-- Lista de personas que solicitaron películas iguales a distintas compañías, indicando película y compañía.
+1. Lista de los 10 últimos movimientos ordenadas de los más recientes a los menos recientes
+2. Listado de personas que solicitaron la mayor cantidad de películas, ordenadas por identificador de personas
+3. Lista de películas que fueron más solicitadas, junto a que empresas fueron solicitadas cada una.
+4. Ranking de las 10 películas más solicitadas, independientemente a la compañía solicitada ordenadas por cantidad de veces que fueron solicitadas.
+5. Lista de personas que solicitaron películas iguales a distintas compañías, indicando película y compañía.
 
 **Sugerencia:** 
 Si se requiere identificar que una película corresponde a un proveedor específico puede adoptarse el código PPSSSS donde PP es el código del proveedor y SSSS es el código de película.

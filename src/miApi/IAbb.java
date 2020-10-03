@@ -37,13 +37,13 @@ public interface IAbb {
      * @Tarea agrega un valor suministrado.
      * @Precondición El árbol debe estar inicializado y no debe existir el valor.
      */
-    void agregar(int x);
+    void agregar(int valor);
 
     /**
      * @Tarea elimina un valor suministrado.
      * @Precondición El valor debe existir.
      */
-    void eliminar(int x);
+    void eliminar(int valor);
 
     /**
      * @Tarea devuelve verdadero si el árbol no contiene elementos.
@@ -57,5 +57,5 @@ public interface IAbb {
      * @Precondición EL árbol debe estar inicializado.
      * @return
      */
-    boolean pertenece();
+    boolean pertenece(int valor);
 }
