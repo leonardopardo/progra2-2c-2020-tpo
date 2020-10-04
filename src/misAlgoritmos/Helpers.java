@@ -4,13 +4,14 @@ import miApi.ICola;
 import miApi.IPila;
 import miApi.ITabla;
 import misImplementaciones.Cola;
+import misImplementaciones.Pila;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class Helpers {
 
-    public ICola cargarMovimientos(String archivo, ITabla tablaPeliculas, ITabla tablaProveedores) {
+    public ICola cargarMovimientos(String archivo, ITabla tablaPeliculas, ITabla tablaProveedores){
 
         try {
             FileReader arch = new FileReader(archivo);
@@ -25,6 +26,7 @@ public class Helpers {
             cola.inicializarCola();
 
             while(linea != null){
+
                 String[] lista = linea.split(";");
                 idPersona = Integer.valueOf(lista[0]);
                 nombreProveedor = lista[2].trim();
@@ -39,6 +41,7 @@ public class Helpers {
 
                     cola.acolar(x);
                 }
+
                 linea = buffer.readLine();
             }
 
@@ -76,10 +79,13 @@ public class Helpers {
         }
     }
 
-    public void colaEnPila(ICola cola, IPila pila) {
+    public IPila colaAPila(ICola cola) {
 
         ICola colaAux = new Cola();
         colaAux.inicializarCola();
+
+        IPila pila = new Pila();
+        pila.inicializarPila();
 
         while (!cola.colaVacia()) {
             pila.apilar(cola.primero());
@@ -91,6 +97,40 @@ public class Helpers {
             cola.acolar(colaAux.primero());
             colaAux.desacolar();
         }
+
+        return pila;
     }
 
+    public IPila subPila(IPila pila, int cant){
+        IPila pilaAux = new Pila();
+        pilaAux.inicializarPila();
+
+        IPila pilaSalida = new Pila();
+        pilaSalida.inicializarPila();
+
+        for (int i = 0; i < cant; i++) {
+            pilaAux.apilar(pila.tope());
+            pilaSalida.apilar(pila.tope());
+            pila.desapilar();
+        }
+
+        for (int i = 0; i < cant; i++) {
+            pila.apilar(pilaAux.tope());
+            pilaAux.desapilar();
+        }
+
+        return pilaSalida;
+    }
+
+    public int obtenerIdPersona(int n){
+        return n/1000000;
+    }
+
+    public int obtenerCodigoProveedor(int n){
+        return (n/10000)%100;
+    }
+
+    public int obtenerCodigoPelicula(int n){
+        return n%10000;
+    }
 }

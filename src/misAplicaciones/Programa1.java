@@ -1,6 +1,7 @@
 package misAplicaciones;
 
 import miApi.ICola;
+import miApi.IPila;
 import miApi.ITabla;
 import misAlgoritmos.Helpers;
 import misImplementaciones.Tabla;
@@ -12,7 +13,6 @@ import java.io.IOException;
  * 2.- Listado de personas que solicitaron la mayor cantidad de películas, ordenadas por identificador de personas.
  */
 public class Programa1 {
-
     public static void main(String[] args) throws IOException {
 
         ITabla tablaProveedores = new Tabla();
@@ -31,15 +31,19 @@ public class Programa1 {
                 tablaProveedores
         );
 
+        IPila ultimosDiezMovimientos = objHelpers.subPila(objHelpers.colaAPila(cola), 10);
 
+        System.out.println("ULTIMAS 10 SOLICITUDES");
+        System.out.println("=================================\n");
+        System.out.println("Persona\tProveedor\tPelicula");
 
-    }
+        while(!ultimosDiezMovimientos.pilaVacia()){
+            String salida =  objHelpers.obtenerIdPersona(ultimosDiezMovimientos.tope()) + "\t\t\t";
+            salida += objHelpers.obtenerCodigoProveedor(ultimosDiezMovimientos.tope()) + "\t\t\t";
+            salida += objHelpers.obtenerCodigoPelicula(ultimosDiezMovimientos.tope());
 
-    public static void mostrarCola(ICola cola) {
-        while (!cola.colaVacia()) {
-            System.out.print(cola.primero() + "\n");
-            cola.desacolar();
+            System.out.println(salida);
+            ultimosDiezMovimientos.desapilar();
         }
-        System.out.println();
     }
 }
