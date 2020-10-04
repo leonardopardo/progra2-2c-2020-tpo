@@ -47,3 +47,41 @@ public class Programa1 {
         }
     }
 }
+
+public class Programa_punto2 {
+
+	public static void main(String[] args) {
+		EntradaSalida eys = new EntradaSalida();
+		Scanner teclado = new Scanner(System.in);
+		
+		/*Generar diccionario base*/
+		IDiccionarioSimple diccionario_ids=new DiccionarioSimple();
+		diccionario_ids.inicializarDiccionarioSimple();
+		
+		/*Llenar el diccionario con clave:IDs, valor=Cantidad de pedidos*/
+		diccionario_ids=eys.contarPersonas("../../TPO/Archivos/Movimientos.txt");
+		
+		/*Inicializar cola final con prioridad para que quede ordenada*/
+		IColaPrioritaria colaPrioridad_ids = new ColaPrioritaria();
+		colaPrioridad_ids.inicializarCola();
+		
+		/*Inicializar conjunto para acolar*/
+		IConjunto conjunto_ids = new Conjunto();
+		conjunto_ids.inicializarConjunto();
+		
+		conjunto_ids=diccionario_ids.claves();
+		
+		while(!conjunto_ids.conjuntoVacio()) {
+			int ID=conjunto_ids.obtener();
+			int valor=diccionario_ids.obtener(ID);
+			colaPrioridad_ids.acolarPrioridad(ID,valor);
+			conjunto_ids.sacar(ID);
+		}
+		
+		int n;
+		System.out.print("Ingrese una cantidad de datos a imprimir: ");
+		n = teclado.nextInt();
+		
+		eys.MostrarColaPrioridad(colaPrioridad_ids,n);
+	}
+}
