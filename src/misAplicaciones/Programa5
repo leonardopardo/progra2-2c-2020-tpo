@@ -1,0 +1,99 @@
+package misAplicaciones;
+
+import miApi.ICola;
+import miApi.IColaCadena;
+import miApi.IConjunto;
+import miApi.IDiccionarioMultiple;
+import miApi.ITabla;
+import misAlgoritmos.EntradaSalida;
+import misAlgoritmos.Helpers;
+import misImplementaciones.Cola;
+import misImplementaciones.ColaCadena;
+import misImplementaciones.Conjunto;
+import misImplementaciones.DiccionarioMultiple;
+import misImplementaciones.Tabla;
+
+public class Programa_punto5 {
+
+	public static void main(String[] args) {
+		EntradaSalida eys = new EntradaSalida();
+		Helpers Helps = new Helpers();
+
+		ITabla tablaProveedores=new Tabla();
+		System.out.println("Carga de proveedores: ");
+		eys.CargarTabla("../../TPO/Archivos/StreamCia.txt",tablaProveedores);
+		
+		ITabla tablaPeliculas=new Tabla();
+		System.out.println("Carga de películas: ");
+		eys.CargarTabla("../../TPO/Archivos/LISTADO DE PELICULAS.txt",tablaPeliculas);
+
+		ICola colaMovimientos=new Cola();
+		colaMovimientos.inicializarCola();
+		System.out.println("Carga de movimientos: ");
+		eys.cargarMovimientos("../../TPO/Archivos/Movimientos.txt",colaMovimientos,tablaProveedores,tablaPeliculas);
+		
+		/*Generar diccionario Claves: personas, Valores: películas que pidieron*/
+		IDiccionarioMultiple diccionario_personaPelicula=new DiccionarioMultiple();
+		diccionario_personaPelicula.inicializarDiccionarioMultiple();
+		
+		/*Generar diccionario Claves: persona-pelicula, Valores: proveedores*/
+		IDiccionarioMultiple diccionario_peliculaProveedor=new DiccionarioMultiple();
+		diccionario_peliculaProveedor.inicializarDiccionarioMultiple();
+		
+		/*Llenar diccionarios*/
+		while(!colaMovimientos.colaVacia()) {
+			int codigo=colaMovimientos.primero();
+			int pelicula=codigo%10000;
+			codigo=codigo/10000;
+			int proveedor=codigo%100;
+			int ID=codigo/100;
+			
+			if(!diccionario_personaPelicula.claves().pertenece(ID) || !diccionario_personaPelicula.obtener(ID).pertenece(pelicula)) {
+				diccionario_personaPelicula.agregar(ID,pelicula);
+			}
+			
+			if(!diccionario_peliculaProveedor.claves().pertenece(ID*1000+pelicula*10) || !diccionario_peliculaProveedor.obtener(ID*1000+pelicula*10).pertenece(proveedor)) {
+				diccionario_peliculaProveedor.agregar(ID*1000+pelicula*10,proveedor);
+			}
+			
+			colaMovimientos.desacolar();
+		}
+		
+		IConjunto conjunto_personaPelicula = new Conjunto();
+		conjunto_personaPelicula=diccionario_personaPelicula.claves();
+
+		IConjunto valores = new Conjunto();
+		valores.inicializarConjunto();
+		
+		IColaCadena cola_resultados = new ColaCadena();
+		cola_resultados.inicializarCola();
+		
+		while(!conjunto_personaPelicula.conjuntoVacio()) {
+			int persona=conjunto_personaPelicula.obtener();			
+			valores=diccionario_personaPelicula.obtener(persona);
+			while(!valores.conjuntoVacio()) {
+				int pelicula=valores.obtener();
+				int peliPer = persona*1000+pelicula*10;
+				
+				IConjunto proves=new Conjunto();
+				proves=diccionario_peliculaProveedor.obtener(peliPer);
+				
+				String proves_str="";
+				while(!proves.conjuntoVacio()) {
+					int proveedor=proves.obtener();
+					proves_str=proves_str+Integer.toString(proveedor);
+					proves.sacar(proveedor);
+					if(!proves.conjuntoVacio()) {
+						proves_str=proves_str+",";
+					}
+				}
+				if(proves_str.length()>2) {
+					cola_resultados.acolar(Integer.toString(peliPer)+"("+proves_str+")");
+				}
+				valores.sacar(pelicula);
+			}
+			conjunto_personaPelicula.sacar(persona);
+		}
+		eys.MostrarColaCadenaPunto5(cola_resultados);
+	}
+}
