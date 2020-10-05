@@ -116,4 +116,12 @@ public class DiccionarioSimpleTest {
         ConjuntoAlgoritmos cAlg = new ConjuntoAlgoritmos();
         assertTrue(cAlg.comparar(d.claves(), c));
     }
+
+    @Test
+    void inicializar_diccionario_y_consultar_pertenecia_de_clave(){
+        IDiccionarioSimple d = new DiccionarioSimple();
+        d.inicializarDiccionarioSimple();
+        assertFalse(d.claves().pertenece(1));
+    }
+
 }

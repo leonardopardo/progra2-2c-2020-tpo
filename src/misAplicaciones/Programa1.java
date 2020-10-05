@@ -1,6 +1,7 @@
 package misAplicaciones;
 
 import miApi.ICola;
+import miApi.IColaPrioritaria;
 import miApi.IPila;
 import miApi.ITabla;
 import misAlgoritmos.Helpers;
@@ -15,6 +16,8 @@ import java.io.IOException;
 public class Programa1 {
     public static void main(String[] args) throws IOException {
 
+        // Lectura de Archivos y Estructuras Base
+        // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         ITabla tablaProveedores = new Tabla();
         tablaProveedores.inicializarTabla();
 
@@ -31,7 +34,10 @@ public class Programa1 {
                 tablaProveedores
         );
 
+        // Punto 1
+        // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         IPila ultimosDiezMovimientos = objHelpers.subPila(objHelpers.colaAPila(cola), 10);
+        objHelpers.invertirPila(ultimosDiezMovimientos);
 
         System.out.println("ULTIMAS 10 SOLICITUDES");
         System.out.println("=================================\n");
@@ -45,5 +51,25 @@ public class Programa1 {
             System.out.println(salida);
             ultimosDiezMovimientos.desapilar();
         }
+
+        // Punto 2
+        // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        IColaPrioritaria colaP = objHelpers.metodo(cola);
+        ICola colaSinOrdenar = objHelpers.subCola(colaP);
+        objHelpers.ordenarCola(colaSinOrdenar);
+
+        System.out.println("\n");
+
+        System.out.println("Personas y cantidad de películas");
+        System.out.println("=================================\n");
+        System.out.println("Persona");
+        while(!colaSinOrdenar.colaVacia()){
+            System.out.println(colaSinOrdenar.primero());
+            colaSinOrdenar.desacolar();
+        }
+        /*while(!colaP.colaVacia()){
+            System.out.println(colaP.primero() + "\t\t\t" + colaP.prioridad());
+            colaP.desacolar();
+        }*/
     }
 }
