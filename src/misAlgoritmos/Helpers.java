@@ -162,7 +162,6 @@ public class Helpers {
         copiarCola(colaOriginal, cola);
 
         while(!cola.colaVacia()){
-            int valor = 1;
             int idPersona = obtenerIdPersona(cola.primero());
 
             if(ds.claves().pertenece(idPersona)){
