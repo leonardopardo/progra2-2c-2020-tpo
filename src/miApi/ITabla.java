@@ -1,6 +1,7 @@
 package miApi;
 
 /**
+ * @Author Joaquin Merlo, Leonardo Pardo.
  * Tabla es una estructura que permite almacenar una colección de elementos. Cada elemento consta de un nombre asociado
  * a un código (tipo de dato entero).
  */

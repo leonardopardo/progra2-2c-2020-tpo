@@ -1,6 +1,7 @@
 package miApi;
 
 /**
+ * @Author Joaquin Merlo, Leonardo Pardo.
  * Árbol de búsqueda binaria es una colección de elementos ordenados en forma jerárquica (todos números enteros). Entre
  * dos elementos vinculados se define la relación padre-hijo. Cada elemento tiene sólo un padre, excepto el elemento
  * raíz del árbol que no tiene padre.

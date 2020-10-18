@@ -2,6 +2,12 @@ package misImplementaciones;
 
 import miApi.ICola;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo.
+ * @Implementación Dinámica.
+ * @Estrategia Primero al inicio.
+ * @Costo
+ */
 public class Cola implements ICola {
 
     class Nodo{

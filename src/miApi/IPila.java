@@ -1,6 +1,7 @@
 package miApi;
 
 /**
+ * @Author Joaquin Merlo, Leonardo Pardo.
  * Pila es una estructura que permite almacenar una colección de valores enteros de modo tal que el último elemento en
  * ingresar sea el primer elemento por salir. También se la conoce como una estructura LIFO.
  */

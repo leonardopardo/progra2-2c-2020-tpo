@@ -4,6 +4,12 @@ import miApi.ICola;
 import miApi.IColaCadena;
 import miApi.ITabla;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo
+ * @Implementación Dinámica
+ * @Estrategia Primero al Inicio.
+ * @Costo
+ */
 public class Tabla implements ITabla {
 
     class Tupla{

@@ -1,6 +1,7 @@
 package miApi;
 
 /**
+ * @Author Joaquin Merlo, Leonardo Pardo.
  * Diccionario simple es una colección de pares asociados clave-valor, ambos números enteros. Las claves son únicas. No
  * puede existir clave sin valor asociado.
  */

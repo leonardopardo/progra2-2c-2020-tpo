@@ -3,6 +3,12 @@ package misImplementaciones;
 import miApi.ICola;
 import miApi.ILista;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo
+ * @Implementación Dinámica
+ * @Estrategia Primero al final.
+ * @Costo
+ */
 public class Lista implements ILista {
 
     class Nodo{

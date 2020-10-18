@@ -1,6 +1,7 @@
 package miApi;
 
 /**
+ * @Author Joaquin Merlo, Leonardo Pardo.
  * Grafo es una colección de vértices etiquetados con un valor entero y aristas con un peso asociado, definidas por un
  * vértice origen y un vértice destino. El grafo no puede tener aristas paralelas ni bucles. Los pesos de las aristas
  * son números enteros.

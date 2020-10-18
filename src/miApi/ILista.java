@@ -1,5 +1,8 @@
 package miApi;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo.
+ */
 public interface ILista {
     /**
      * @Tarea Inicializa la lista

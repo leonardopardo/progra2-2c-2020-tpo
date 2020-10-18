@@ -1,6 +1,7 @@
 package miApi;
 
 /**
+ * @Author Joaquin Merlo, Leonardo Pardo.
  * Conjunto es una estructura que permite almacenar una colección de valores enteros, no repetidos y no necesariamente
  * ordenado.
  */

@@ -2,6 +2,12 @@ package misImplementaciones;
 
 import miApi.IPila;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo
+ * @Implementación Dinámica
+ * @Estrategia Primero al final.
+ * @Costo
+ */
 public class Pila implements IPila {
 
     class Nodo{

@@ -3,6 +3,12 @@ package misImplementaciones;
 import miApi.IConjunto;
 import miApi.IGrafo;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo
+ * @Implementación Dinámica
+ * @Estrategia Ordena por prioririodiad, la primera es la más alta.
+ * @Costo
+ */
 public class Grafo implements IGrafo {
     @Override
     public void inicializarGrafo() {

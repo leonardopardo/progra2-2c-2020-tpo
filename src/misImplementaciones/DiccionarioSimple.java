@@ -3,6 +3,12 @@ package misImplementaciones;
 import miApi.IConjunto;
 import miApi.IDiccionarioSimple;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo
+ * @Implementación Dinámica
+ * @Estrategia Primero al final.
+ * @Costo
+ */
 public class DiccionarioSimple implements IDiccionarioSimple {
 
     class Nodo{

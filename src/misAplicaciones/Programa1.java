@@ -10,6 +10,7 @@ import misImplementaciones.Tabla;
 import java.io.IOException;
 
 /**
+ * @Author Joaquin Merlo, Leonardo Pardo.
  * 1.- Lista de los 10 últimos movimientos ordenadas de los más recientes a los menos recientes.
  * 2.- Listado de personas que solicitaron la mayor cantidad de películas, ordenadas por identificador de personas.
  */
@@ -67,9 +68,5 @@ public class Programa1 {
             System.out.println(colaSinOrdenar.primero());
             colaSinOrdenar.desacolar();
         }
-        /*while(!colaP.colaVacia()){
-            System.out.println(colaP.primero() + "\t\t\t" + colaP.prioridad());
-            colaP.desacolar();
-        }*/
     }
 }

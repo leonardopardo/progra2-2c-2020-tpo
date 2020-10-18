@@ -2,6 +2,12 @@ package misImplementaciones;
 
 import miApi.IConjunto;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo
+ * @Implementación Dinámica
+ * @Estrategia Primero al Final.
+ * @Costo
+ */
 public class Conjunto implements IConjunto {
 
     class Nodo{

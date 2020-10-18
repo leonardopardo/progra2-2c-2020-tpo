@@ -2,6 +2,12 @@ package misImplementaciones;
 
 import miApi.IColaPrioritaria;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo
+ * @Implementación Dinámica
+ * @Estrategia Ordena por prioririodiad, la primera es la más alta.
+ * @Costo
+ */
 public class ColaPrioritaria implements IColaPrioritaria {
 
     class Nodo{

@@ -1,6 +1,7 @@
 package miApi;
 
 /**
+ * @Author Joaquin Merlo, Leonardo Pardo.
  * Diccionario múltiple es una colección de elementos asociados clave-valores. La clave y los valores son números
  * enteros. Las claves son únicas. No puede existir clave sin valor asociado. Los valores son únicos para una misma
  * clave.

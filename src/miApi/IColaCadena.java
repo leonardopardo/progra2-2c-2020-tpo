@@ -1,6 +1,7 @@
 package miApi;
 
 /**
+ * @Author Joaquin Merlo, Leonardo Pardo.
  * Cola es una estructura que permite almacenar una colección de cadenas de caracteres (Strings), de modo tal que el
  * elemento más antiguo sea el primer elemento en salir. También se la conoce como una estructura FIFO.
  */

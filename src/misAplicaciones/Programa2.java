@@ -7,7 +7,11 @@ import misImplementaciones.*;
 import java.io.IOException;
 
 /**
+ * @Author Joaquin Merlo, Leonardo Pardo.
  * 3.- Lista de películas que fueron más solicitadas, junto a que empresas fueron solicitadas cada una.
+ * 4.- Ranking de las 10 películas más solicitadas, independientemente a la compañía solicitada ordenadas por cantidad
+ * de veces que fueron solicitadas.
+ * 5.- Lista de personas que solicitaron películas iguales a distintas compañías, indicando película y compañía.
  */
 public class Programa2 {
     public static void main(String[] args) throws IOException {

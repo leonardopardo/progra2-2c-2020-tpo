@@ -2,6 +2,12 @@ package misImplementaciones;
 
 import miApi.IAbb;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo.
+ * @Implementación Dinámica
+ * @Estrategia
+ * @Costo
+ */
 public class Abb implements IAbb {
 
     class Nodo {

@@ -2,6 +2,12 @@ package misImplementaciones;
 
 import miApi.IColaCadena;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo.
+ * @Implementación Dinámica
+ * @Estragegia Primero al Inicio
+ * @Costo
+ */
 public class ColaCadena implements IColaCadena {
 
     class Nodo{

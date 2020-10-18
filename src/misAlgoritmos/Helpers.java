@@ -9,8 +9,16 @@ import misImplementaciones.Pila;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+/**
+ * @Author Joaquin Merlo, Leonardo Pardo.
+ */
 public class Helpers {
 
+    /**
+     * Recorre un archivo de texto, obtiene el valor de cada renglón y lo agrega a una estructura Tabla.
+     * @param tabla
+     * @param archivo
+     */
     public void cargarTabla(ITabla tabla, String archivo){
 
         try {
@@ -35,6 +43,15 @@ public class Helpers {
         }
     }
 
+    /**
+     * Recorre un archivo de texto separado por punto y coma, se sapara cada valor, se compara con las tablas de película
+     * y la de proveedores y se obtiene una estructura de Cola con la estructura IdPersona-codigoProveedor-codigoPelicula
+     * XXYYYZZZZ.
+     * @param archivo
+     * @param tablaPeliculas
+     * @param tablaProveedores
+     * @return ICola
+     */
     public ICola cargarMovimientos(String archivo, ITabla tablaPeliculas, ITabla tablaProveedores){
 
         try {
@@ -79,6 +96,12 @@ public class Helpers {
         }
     }
 
+    /**
+     * Pasa de una estructura de Cola a una de Pila y retorna la Pila.
+     * La Cola Original no se borra.
+     * @param cola
+     * @return IPila
+     */
     public IPila colaAPila(ICola cola) {
 
         ICola colaAux = new Cola();
@@ -101,6 +124,13 @@ public class Helpers {
         return pila;
     }
 
+    /**
+     * Genera una Pila de n elementos, la Pila Original y la cantidad de elementos son argumentos.
+     * La Pila original no se borra ni pierde elementos.
+     * @param pila
+     * @param cant
+     * @return IPila
+     */
     public IPila subPila(IPila pila, int cant){
         IPila pilaAux = new Pila();
         pilaAux.inicializarPila();
@@ -122,6 +152,10 @@ public class Helpers {
         return pilaSalida;
     }
 
+    /**
+     * Invierte una Pila dada.
+     * @param pila
+     */
     public void invertirPila(IPila pila){
         ICola colaAux = new Cola();
         colaAux.inicializarCola();
@@ -137,18 +171,39 @@ public class Helpers {
         }
     }
 
+    /**
+     * Dado el valor generado para la Cola de Movimientos extrae el id de Persona.
+     * @param n
+     * @return
+     */
     public int obtenerIdPersona(int n){
         return n/1000000;
     }
 
+    /**
+     * Dado el valor generado para la Cola de Movimientos extrae el código del Proveedor.
+     * @param n
+     * @return
+     */
     public int obtenerCodigoProveedor(int n){
         return (n/10000)%100;
     }
 
+    /**
+     * Dado el valor generado para la Cola de Movimientos extrae el código de Pelicula.
+     * @param n
+     * @return
+     */
     public int obtenerCodigoPelicula(int n){
         return n%10000;
     }
 
+    /**
+     * Recibe la cola de movimientos y retorna una cola con prioridad donde el elemento es el id de Persona y la
+     * prioridad representa la cantidad de Péliculas.
+     * @param colaOriginal
+     * @return
+     */
     public IColaPrioritaria metodo(ICola colaOriginal){
 
         IColaPrioritaria colaP = new ColaPrioritaria();
@@ -185,6 +240,11 @@ public class Helpers {
         return colaP;
     }
 
+    /**
+     * Copia una Cola de Origen a otra Cola de Destino, ambas colas vienen por argumento.
+     * @param colaOrigen
+     * @param colaDestino
+     */
     public void copiarCola(ICola colaOrigen, ICola colaDestino) {
 
         ICola colaAux = new Cola();
@@ -202,6 +262,11 @@ public class Helpers {
         }
     }
 
+    /**
+     * Ordena los valores de una Cola de forma ascendente.
+     * Recibe la cola por argumento y la modifica.
+     * @param cola
+     */
     public void ordenarCola(ICola cola){
         ICola colaAux = new Cola();
         colaAux.inicializarCola();
@@ -240,6 +305,11 @@ public class Helpers {
         }
     }
 
+    /**
+     * Recibe una cola con prioridad y retorna una cola con todos los elementos de mayor prioridad.
+     * @param colaP
+     * @return
+     */
     public ICola subCola(IColaPrioritaria colaP){
         int max = colaP.prioridad();
 
@@ -263,6 +333,12 @@ public class Helpers {
         return colaSalida;
     }
 
+    /**
+     * Calcula la cantidad de elementos de una cola.
+     * La Cola no se modifica.
+     * @param cola
+     * @return
+     */
     public int longitudCola(ICola cola){
 
         ICola colaAux = new Cola();

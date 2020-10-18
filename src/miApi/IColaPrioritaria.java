@@ -1,6 +1,7 @@
 package miApi;
 
 /**
+ * @Author Joaquin Merlo, Leonardo Pardo.
  * Cola con prioridad es una estructura que permite almacenar una colección de valores enteros asociados a una prioridad,
  * de modo tal que el primer elemento a salir sea el de mayor prioridad.
  */
