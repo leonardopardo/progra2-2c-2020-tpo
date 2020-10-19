@@ -8,7 +8,7 @@ import miApi.ITabla;
  * @Author Joaquin Merlo, Leonardo Pardo
  * @Implementación Dinámica
  * @Estrategia Primero al Inicio.
- * @Costo
+ * @Costo 3N + 2N^2
  */
 public class Tabla implements ITabla {
 

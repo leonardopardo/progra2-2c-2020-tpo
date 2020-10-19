@@ -6,7 +6,7 @@ import miApi.ICola;
  * @Author Joaquin Merlo, Leonardo Pardo.
  * @Implementación Dinámica.
  * @Estrategia Primero al inicio.
- * @Costo
+ * @Costo Constante
  */
 public class Cola implements ICola {
 

@@ -6,7 +6,7 @@ import miApi.IPila;
  * @Author Joaquin Merlo, Leonardo Pardo
  * @Implementación Dinámica
  * @Estrategia Primero al final.
- * @Costo
+ * @Costo Constante
  */
 public class Pila implements IPila {
 

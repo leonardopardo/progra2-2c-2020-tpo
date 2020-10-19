@@ -6,7 +6,7 @@ import miApi.IConjunto;
  * @Author Joaquin Merlo, Leonardo Pardo
  * @Implementación Dinámica
  * @Estrategia Primero al Final.
- * @Costo
+ * @Costo Lineal N
  */
 public class Conjunto implements IConjunto {
 

@@ -6,7 +6,7 @@ import miApi.IColaPrioritaria;
  * @Author Joaquin Merlo, Leonardo Pardo
  * @Implementación Dinámica
  * @Estrategia Ordena por prioririodiad, la primera es la más alta.
- * @Costo
+ * @Costo Lineal N
  */
 public class ColaPrioritaria implements IColaPrioritaria {
 

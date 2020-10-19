@@ -6,7 +6,7 @@ import miApi.IColaCadena;
  * @Author Joaquin Merlo, Leonardo Pardo.
  * @Implementación Dinámica
  * @Estragegia Primero al Inicio
- * @Costo
+ * @Costo Constante
  */
 public class ColaCadena implements IColaCadena {
 

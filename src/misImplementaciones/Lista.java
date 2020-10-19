@@ -7,7 +7,7 @@ import miApi.ILista;
  * @Author Joaquin Merlo, Leonardo Pardo
  * @Implementación Dinámica
  * @Estrategia Primero al final.
- * @Costo
+ * @Costo Lineal N
  */
 public class Lista implements ILista {
 

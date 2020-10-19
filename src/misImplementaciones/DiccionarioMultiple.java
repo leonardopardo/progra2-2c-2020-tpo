@@ -7,7 +7,7 @@ import miApi.IDiccionarioMultiple;
  * @Author Joaquin Merlo, Leonardo Pardo
  * @Implementación Dinámica
  * @Estrategia Primero al final.
- * @Costo
+ * @Costo Lineal N
  */
 public class DiccionarioMultiple implements IDiccionarioMultiple {
 

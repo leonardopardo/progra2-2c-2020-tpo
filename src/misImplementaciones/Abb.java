@@ -6,7 +6,7 @@ import miApi.IAbb;
  * @Author Joaquin Merlo, Leonardo Pardo.
  * @Implementación Dinámica
  * @Estrategia
- * @Costo
+ * @Costo Logaritmico
  */
 public class Abb implements IAbb {
 

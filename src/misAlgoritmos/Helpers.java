@@ -18,6 +18,8 @@ public class Helpers {
      * Recorre un archivo de texto, obtiene el valor de cada renglón y lo agrega a una estructura Tabla.
      * @param tabla
      * @param archivo
+     * @Costo-Espacial -
+     * @Costo-Temporal Lineal - N
      */
     public void cargarTabla(ITabla tabla, String archivo){
 
@@ -51,6 +53,8 @@ public class Helpers {
      * @param tablaPeliculas
      * @param tablaProveedores
      * @return ICola
+     * @Costo-Espacial 1
+     * @Costo-Temporal Cuadratico - N^2
      */
     public ICola cargarMovimientos(String archivo, ITabla tablaPeliculas, ITabla tablaProveedores){
 
@@ -101,6 +105,8 @@ public class Helpers {
      * La Cola Original no se borra.
      * @param cola
      * @return IPila
+     * @Costo-Espacial 2
+     * @Costo-Temporal Lineal - 2N
      */
     public IPila colaAPila(ICola cola) {
 
@@ -130,6 +136,8 @@ public class Helpers {
      * @param pila
      * @param cant
      * @return IPila
+     * @Costo-Espacial 2
+     * @Costo-Temporal Lineal - 2N
      */
     public IPila subPila(IPila pila, int cant){
         IPila pilaAux = new Pila();
@@ -155,6 +163,8 @@ public class Helpers {
     /**
      * Invierte una Pila dada.
      * @param pila
+     * @Costo-Espacial 1
+     * @Costo-Temporal Lineal - 2N
      */
     public void invertirPila(IPila pila){
         ICola colaAux = new Cola();
@@ -175,6 +185,8 @@ public class Helpers {
      * Dado el valor generado para la Cola de Movimientos extrae el id de Persona.
      * @param n
      * @return
+     * @Costo-Espacial -
+     * @Costo-Temporal Constante
      */
     public int obtenerIdPersona(int n){
         return n/1000000;
@@ -184,6 +196,8 @@ public class Helpers {
      * Dado el valor generado para la Cola de Movimientos extrae el código del Proveedor.
      * @param n
      * @return
+     * @Costo-Espacial -
+     * @Costo-Temporal Constante
      */
     public int obtenerCodigoProveedor(int n){
         return (n/10000)%100;
@@ -193,6 +207,8 @@ public class Helpers {
      * Dado el valor generado para la Cola de Movimientos extrae el código de Pelicula.
      * @param n
      * @return
+     * @Costo-Espacial -
+     * @Costo-Temporal Constante
      */
     public int obtenerCodigoPelicula(int n){
         return n%10000;
@@ -203,6 +219,8 @@ public class Helpers {
      * prioridad representa la cantidad de Péliculas.
      * @param colaOriginal
      * @return
+     * @Costo-Espacial 3
+     * @Costo-Temporal Cuadratico - 2N^2
      */
     public IColaPrioritaria metodo(ICola colaOriginal){
 
@@ -244,6 +262,8 @@ public class Helpers {
      * Copia una Cola de Origen a otra Cola de Destino, ambas colas vienen por argumento.
      * @param colaOrigen
      * @param colaDestino
+     * @Costo-Espacial 1
+     * @Costo-Temporal Lineal - 2N
      */
     public void copiarCola(ICola colaOrigen, ICola colaDestino) {
 
@@ -266,6 +286,8 @@ public class Helpers {
      * Ordena los valores de una Cola de forma ascendente.
      * Recibe la cola por argumento y la modifica.
      * @param cola
+     * @Costo-Espacial 2
+     * @Costo-Temporal Cuadratico - N+2N^2
      */
     public void ordenarCola(ICola cola){
         ICola colaAux = new Cola();
@@ -309,6 +331,8 @@ public class Helpers {
      * Recibe una cola con prioridad y retorna una cola con todos los elementos de mayor prioridad.
      * @param colaP
      * @return
+     * @Costo-Espacial 2
+     * @Costo-Temporal Cuadratico - 2N^2
      */
     public ICola subCola(IColaPrioritaria colaP){
         int max = colaP.prioridad();
@@ -338,6 +362,8 @@ public class Helpers {
      * La Cola no se modifica.
      * @param cola
      * @return
+     * @Costo-Espacial 1
+     * @Costo-Temporal Lineal - 2N
      */
     public int longitudCola(ICola cola){
 
